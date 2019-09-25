@@ -1,12 +1,23 @@
+const dotenv = require('dotenv');
+const environment = process.env.NODE_ENV;
+
+dotenv.config({
+  path: `${environment}.env`,
+});
+
 module.exports = {
-  "host": "192.168.10.10",
-  "name": "default",
-  "type": "mssql",
-  "username": "sa",
-  "password": "Munives123",
-  "database": "sistradoc_prod",
-  "logging": true,
-  "entities": [
-    "./src/**/*.entity.ts",
-  ],
+  host: process.env.TYPEORM_HOST,
+  name: process.env.TYPEORM_NAME,
+  type: process.env.TYPEORM_TYPE,
+  username: process.env.TYPEORM_USERNAME,
+  password: process.env.TYPEORM_PASSWORD,
+  database: process.env.TYPEORM_DATABASE,
+  synchronize: true, //Boolean( data<.TYPEORM_SYNCHRONIZE ),
+  logging: Boolean(process.env.TYPEORM_LOGGING),
+  entities: process.env.TYPEORM_ENTITIES.split(','),
+  migrationsRun: true,
+  migrations: ['./migrations/*.ts'],
+  cli: {
+    migrationsDir: './migrations',
+  },
 };

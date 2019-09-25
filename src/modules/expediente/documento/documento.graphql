@@ -1,0 +1,19 @@
+scalar Date
+
+type Documento {
+  iddocumento: ID
+  correlativo: Int
+  codigo: String
+  idtipdoc: Int
+  asunto: String
+  observacion: String
+  sumilla: String
+  folios: Int
+  fecha: Date
+  idcategoriadocumento: Int
+  externo: Boolean
+}
+
+type Query {
+  documento(correlativo: Int, externo: Boolean): [Documento]
+}

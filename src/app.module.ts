@@ -1,15 +1,24 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AreaModule } from './areas/area.module';
+import { ExpedienteModule } from './modules/expediente/expediente.module';
+import { MovimientoModule } from './modules/movimiento/movimiento.module';
+import { AppGateway } from './gateways/app.gateway';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
-    AreaModule,
+    ExpedienteModule,
+    MovimientoModule,
+    // GraphQLModule.forRoot({
+    //   typePaths: ['./**/*.graphql'],
+    //   debug: false,
+    //   playground: true,
+    // }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppGateway],
 })
 export class AppModule {}
