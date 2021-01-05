@@ -57,7 +57,7 @@
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.7",
     "@types/websocket": "^0.0.40",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "jest": "^23.6.0",
     "ndb": "^1.1.5",
     "nodemon": "^1.18.9",
