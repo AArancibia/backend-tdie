@@ -46,7 +46,7 @@
     "request": "^2.88.0",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "typeorm": "^0.2.16"
   },
   "devDependencies": {
